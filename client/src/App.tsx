@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import './App.css'
+import {Button} from "./components/button.tsx";
 
 function App() {
   const [fruits, setFruits] = useState([])
@@ -13,9 +14,7 @@ function App() {
 
   return (
     <>
-        <button onClick={() => fetchFruits()}>
-          Get fruits
-        </button>
+        <Button onClick={() => fetchFruits()} title="Fruits" />
         {fruits.map((fruit) => (<><div>{fruit}</div><br /></>))}
     </>
   )
