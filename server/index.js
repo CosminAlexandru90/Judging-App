@@ -1,6 +1,9 @@
 const express=require("express");
-const app=express();
 const cors=require("cors");
+require('dotenv').config();
+
+const app=express();
+
 const corsOptions={
     origin:["http://localhost:5173"],
 }
@@ -11,6 +14,6 @@ app.get("/api",(request,response)=>{
     response.status(200).json({fruits: ["apple", "banana", "orange", "pepenas"]});
 })
 
-app.listen(8080,()=>{
-    console.log("Listening on 8080");
+app.listen(process.env.PORT,()=>{
+    console.log(`Listening on port ${process.env.PORT}`);
 })
