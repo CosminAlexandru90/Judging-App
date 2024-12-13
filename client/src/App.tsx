@@ -15,7 +15,7 @@ function App() {
   return (
     <>
         <Button onClick={() => fetchFruits()} title="Fruits" />
-        {fruits.map((fruit) => (<><div>{fruit}</div><br /></>))}
+        {fruits.map((fruit, index) => (<p key={index}>{fruit}</p>))}
     </>
   )
 }
